@@ -1,0 +1,53 @@
+{
+    "name": "superbig/craft-mailchimp",
+    "description": "MailChimp",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "mailchimp"
+    ],
+    "support": {
+        "docs": "https://github.com/sjelfull/craft-mailchimp/blob/master/README.md",
+        "issues": "https://github.com/sjelfull/craft-mailchimp/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Superbig",
+            "homepage": "https://superbig.co"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1",
+        "drewm/mailchimp-api": "^2.4"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "superbig\\mailchimp\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "MailChimp",
+        "handle": "mailchimp",
+        "schemaVersion": "1.0.0",
+        "hasCpSettings": true,
+        "hasCpSection": true,
+        "changelogUrl": "https://raw.githubusercontent.com/sjelfull/craft-mailchimp/master/CHANGELOG.md",
+        "components": {
+            "mailChimpService": "superbig\\mailchimp\\services\\MailChimpService",
+            "lists": "superbig\\mailchimp\\services\\Lists",
+            "subscriber": "superbig\\mailchimp\\services\\Subscriber"
+        },
+        "class": "superbig\\mailchimp\\MailChimp"
+    }
+}

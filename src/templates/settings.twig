@@ -1,0 +1,41 @@
+{#
+/**
+ * MailChimp plugin for Craft CMS 3.x
+ *
+ * MailChimp Settings.twig
+ *
+ * @author    Superbig
+ * @copyright Copyright (c) 2017 Superbig
+ * @link      https://superbig.co
+ * @package   MailChimp
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("superbig\\mailchimp\\assetbundles\\mailchimp\\MailChimpAsset") %}
+
+{{ forms.textField({
+    label: 'API key',
+    instructions: '',
+    id: 'apiKey',
+    name: 'apiKey',
+    value: settings['apiKey']})
+}}
+
+{{ forms.textField({
+    label: 'Default list ID',
+    instructions: '',
+    id: 'defaultListId',
+    name: 'defaultListId',
+    value: settings['defaultListId']})
+}}
+
+{{ forms.lightswitchField({
+    label: 'Use database as source of truth',
+    instructions: 'This will skip checking the subscriber status if we already have the user marked as subscribed/unsubscribed in the database.',
+    id: 'dbAsSourceOfTruth',
+    name: 'dbAsSourceOfTruth',
+    on: settings['dbAsSourceOfTruth']})
+}}
